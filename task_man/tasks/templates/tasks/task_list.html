@@ -1,0 +1,11 @@
+<a href="{% url 'task_create' %}">Add task</a>
+<ul>
+    {% for task in tasks %}
+        <li>
+            {{ task.title }} - {{task.completed|yesno:"Done, In Progres" }}]]}}
+            <a href="{% url 'task_update' task.id %}">Deleted</a>
+        </li>
+    {% empty %}
+        <li>No tasks</li>
+    {% endfor %}
+</ul>
